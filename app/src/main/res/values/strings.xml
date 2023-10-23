@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Movie App</string>
+    <string name="password_invalid">Password less than 8 characters</string>
+    <string name="txt_label_email">Email</string>
+    <string name="txt_label_password">Password</string>
+    <string name="txt_sign_in">Login</string>
+    <string name="txt_registrasi">Don\'t have an account yet? register</string>
+    <string name="txt_register">Register</string>
+    <string name="txt_label_name">Name</string>
+    <string name="txt_masuk">Already have an account? login</string>
+</resources>

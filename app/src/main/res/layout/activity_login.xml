@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/img_story"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/ic_cloud"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ContentDescription,ImageContrastCheck" />
+
+            <TextView
+                android:id="@+id/txt_field_email"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/txt_label_email"
+                android:textAlignment="textStart"
+                android:textColor="@color/color_black"
+                app:layout_constraintEnd_toEndOf="@+id/txt_field_login"
+                app:layout_constraintStart_toStartOf="@+id/txt_field_login"
+                app:layout_constraintTop_toBottomOf="@+id/txt_field_login" />
+
+            <EditText
+                android:id="@+id/ed_login_email"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="24dp"
+                android:autofillHints="emailAddress"
+                android:background="@drawable/bg_edit_text"
+                android:inputType="textEmailAddress"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_field_email"
+                tools:ignore="LabelFor,VisualLintTextFieldSize,SpeakableTextPresentCheck" />
+
+            <TextView
+                android:id="@+id/txt_field_password"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/txt_label_password"
+                android:textAlignment="textStart"
+                android:textColor="@color/color_black"
+                app:layout_constraintEnd_toEndOf="@+id/txt_field_login"
+                app:layout_constraintStart_toStartOf="@+id/txt_field_login"
+                app:layout_constraintTop_toBottomOf="@+id/ed_login_email" />
+
+            <com.scrum.movieapp.customview.Password
+                android:id="@+id/ed_login_password"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:inputType="textPassword"
+                android:background="@drawable/bg_edit_text"
+                app:layout_constraintEnd_toEndOf="@+id/ed_login_email"
+                app:layout_constraintStart_toStartOf="@+id/ed_login_email"
+                app:layout_constraintTop_toBottomOf="@+id/txt_field_password"
+                tools:ignore="VisualLintTextFieldSize,SpeakableTextPresentCheck" />
+
+            <com.scrum.movieapp.customview.Button
+                android:id="@+id/btn_login"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:enabled="false"
+                android:text="@string/txt_sign_in"
+                app:layout_constraintEnd_toEndOf="@+id/ed_login_password"
+                app:layout_constraintStart_toStartOf="@+id/ed_login_password"
+                app:layout_constraintTop_toBottomOf="@+id/ed_login_password"
+                tools:ignore="VisualLintButtonSize,DuplicateSpeakableTextCheck" />
+
+            <TextView
+                android:id="@+id/txt_field_login"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/txt_sign_in"
+                android:textSize="24sp"
+                android:lineHeight="35dp"
+                android:textColor="@color/color_black"
+                app:layout_constraintEnd_toEndOf="@+id/ed_login_email"
+                app:layout_constraintStart_toStartOf="@+id/ed_login_email"
+                app:layout_constraintTop_toBottomOf="@+id/img_story"
+                tools:ignore="UnusedAttribute" />
+
+            <TextView
+                android:id="@+id/txt_register"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="24dp"
+                android:text="@string/txt_registrasi"
+                android:textAlignment="center"
+                android:textColor="@color/color_dark_grey"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/btn_login"
+                app:layout_constraintStart_toStartOf="@+id/btn_login"
+                app:layout_constraintTop_toBottomOf="@+id/btn_login"
+                tools:ignore="TextContrastCheck" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/load"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:focusable="true"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/color_black_transparent" />
+
+        <ProgressBar
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+</RelativeLayout>
