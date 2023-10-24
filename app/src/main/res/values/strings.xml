@@ -8,4 +8,24 @@
     <string name="txt_register">Register</string>
     <string name="txt_label_name">Name</string>
     <string name="txt_masuk">Already have an account? login</string>
+
+    <string-array name="data_photo">
+        <item>https://dlcdnwebimgs.asus.com/gain/C7E064B3-47D1-4C95-8572-E0ACEBEF9CC9/w1000/h732</item>
+    </string-array>
+
+    <string-array name="data_name">
+        <item>ROG Strix G17 (2022)</item>
+    </string-array>
+
+    <string-array name="data_desc">
+        <item>
+            Up to an AMD Ryzen™ 9 6900HX CPU and up to an NVIDIA® GeForce RTX™ 3070Ti Laptop GPU
+            dGPU iGPU. Up to a 150W TGP NVIDIA® GeForce RTX™ 3070Ti Laptop GPU with MUX Switch
+            Liquid Metal. \n\nROG Intelligent Cooling™: Liquid Metal and 84-blade Arc Flow Fans™
+            QHD/FHD. Fluid, fast-paced play with FHD 360Hz/3ms displays
+            Dolby VISION ATMOS. \n\nDolby Vision and Dolby Atmos support for immersive content
+            ASUS AURA RGB. Multiple RGB lighting zones with Aura Sync support to flex your flair.
+        </item>
+    </string-array>
+
 </resources>
