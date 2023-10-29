@@ -12,6 +12,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding : ActivityMainBinding
     private lateinit var rvFilm: RecyclerView
     private val list = ArrayList<Film>()
+    private lateinit var adapter: ListFilmAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
