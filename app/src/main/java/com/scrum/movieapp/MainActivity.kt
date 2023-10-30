@@ -1,48 +1,62 @@
 package com.scrum.movieapp
 
 import android.os.Bundle
+import android.util.Log
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.google.firebase.auth.FirebaseAuth
-import com.scrum.movieapp.databinding.ActivityMainBinding
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var binding : ActivityMainBinding
+    private lateinit var dbRef: DatabaseReference
     private lateinit var rvFilm: RecyclerView
-    private val list = ArrayList<Film>()
-    private lateinit var adapter: ListFilmAdapter
+    private lateinit var list: ArrayList<Film>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        setContentView(R.layout.activity_main)
 
-        rvFilm = binding.rvFilm
+        rvFilm = findViewById(R.id.rv_film)
+        rvFilm.layoutManager = LinearLayoutManager(this)
         rvFilm.setHasFixedSize(true)
 
-        rvFilm.layoutManager = LinearLayoutManager(this)
+        list = arrayListOf<Film>()
+        getFilmData()
     }
 
-    private fun showRecyclerList() {
-        rvFilm.layoutManager = LinearLayoutManager(this)
-        val listFilmAdapter = ListFilmAdapter(list)
-        rvFilm.adapter = listFilmAdapter
+    private fun getFilmData() {
+        val database: FirebaseDatabase = FirebaseDatabase.getInstance("https://film-370da-default-rtdb.asia-southeast1.firebasedatabase.app/")
+        dbRef = database.getReference("Film")
 
+        Log.d("Database nya", dbRef.database.toString())
+
+        dbRef.addValueEventListener(object: ValueEventListener{
+            override fun onDataChange(snapshot: DataSnapshot) {
+                if(snapshot.exists()){
+                    for(filmSnapshot in snapshot.children){
+                        val film = filmSnapshot.getValue(Film::class.java)
+
+                        Log.d("FirebaseData", "Film name: ${film?.title}, Description: ${film?.description}")
+
+                        list.add(film!!)
+                    }
+                    rvFilm.adapter = ListFilmAdapter(list)
+                }
+                else{
+                    Toast.makeText(this@MainActivity, "Data is Null", Toast.LENGTH_SHORT).show()
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                Log.w("null_error","data")
+                Toast.makeText(this@MainActivity, "Database Error", Toast.LENGTH_SHORT).show()
+            }
+        })
     }
-
-
-    private fun getListLaptops(): ArrayList<Film> {
-        val dataName = resources.getStringArray(R.array.data_name)
-        val dataDesc = resources.getStringArray(R.array.data_desc)
-        val dataPhoto = resources.getStringArray(R.array.data_photo)
-        val listLaptop = ArrayList<Film>()
-        for(i in dataName.indices){
-            val laptop = Film(dataName[i],dataDesc[i],dataPhoto[i])
-            listLaptop.add(laptop)
-        }
-        return listLaptop
-    }
-
 }
