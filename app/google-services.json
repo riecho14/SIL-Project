@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "370223392842",
+    "project_id": "film-370da",
+    "storage_bucket": "film-370da.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:370223392842:android:aee4b342510b0297ed5eb3",
+        "android_client_info": {
+          "package_name": "com.scrum.movieapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBrjNwVOluOexblBKsTlzHRG3x1vi5QhM0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
