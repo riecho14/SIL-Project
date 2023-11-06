@@ -24,10 +24,18 @@ class LoginActivity : AppCompatActivity() {
         binding.txtRegister.setOnClickListener {
             val intent = Intent(this@LoginActivity, RegisterActivity::class.java)
             startActivity(intent)
+            finish()
         }
 
         binding.btnLogin.setOnClickListener {
             login()
+            finish()
+        }
+
+        binding.txtAdmin.setOnClickListener {
+            val intent = Intent(this@LoginActivity, AdminLoginActivity::class.java)
+            startActivity(intent)
+            finish()
         }
     }
 
