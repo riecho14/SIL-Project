@@ -9,4 +9,5 @@
     <color name="color_disabled">#94DEFF</color>
     <color name="color_primary">#03A9F4</color>
     <color name="color_primary_light">#2196F3</color>
+    <color name="color_row">#8FCDF4</color>
 </resources>

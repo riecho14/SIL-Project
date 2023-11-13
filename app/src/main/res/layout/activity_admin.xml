@@ -6,4 +6,56 @@
     android:layout_height="match_parent"
     tools:context=".AdminActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/color_primary_light"
+        app:title="Movie App"
+        app:titleTextColor="#FFFFFF"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/line"
+        android:layout_width="0dp"
+        android:layout_height="4dp"
+        android:background="@color/color_primary_light"
+        app:layout_constraintBottom_toBottomOf="@+id/welcome"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/welcome"
+        app:layout_constraintTop_toTopOf="@id/welcome" />
+
+    <TextView
+        android:id="@+id/welcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="6dp"
+        android:text="Sedang Tayang"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_film"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/welcome"
+        tools:listitem="@layout/item_row_film" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/new_film"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/baseline_add_24"
+        android:layout_margin="16dp"
+        app:tint="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:backgroundTint="@color/color_primary"
+        android:contentDescription="Add Film" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
