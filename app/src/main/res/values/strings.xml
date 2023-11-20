@@ -10,6 +10,7 @@
     <string name="txt_masuk">Already have an account? login</string>
     <string name="login_as_admin">Login as admin</string>
     <string name="login_as_user">Login as user</string>
+    <string name="genre">Genre</string>
 
     <string-array name="data_photo">
         <item>https://dlcdnwebimgs.asus.com/gain/C7E064B3-47D1-4C95-8572-E0ACEBEF9CC9/w1000/h732</item>

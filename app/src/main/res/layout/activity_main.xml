@@ -19,10 +19,11 @@
         android:id="@+id/line"
         android:layout_width="0dp"
         android:layout_height="4dp"
+        android:layout_marginStart="8dp"
         android:background="@color/color_primary_light"
         app:layout_constraintBottom_toBottomOf="@+id/welcome"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/welcome"
+        app:layout_constraintStart_toEndOf="@+id/button2"
         app:layout_constraintTop_toTopOf="@id/welcome" />
 
     <TextView
@@ -35,6 +36,17 @@
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/color_primary"
+        android:text="@string/genre"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/welcome"
+        app:layout_constraintStart_toEndOf="@+id/welcome"
+        app:layout_constraintTop_toTopOf="@+id/welcome" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_film"
