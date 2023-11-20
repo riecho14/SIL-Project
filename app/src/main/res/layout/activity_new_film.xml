@@ -162,6 +162,30 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/description"/>
 
+            <TextView
+                android:id="@+id/price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                android:text="Price Film"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ed_add_description" />
+
+            <EditText
+                android:id="@+id/ed_add_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="12dp"
+                android:layout_marginBottom="16dp"
+                android:hint="Input Actors Film"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/price"/>
+
             <Button
                 android:id="@+id/addButton"
                 android:layout_width="0dp"
@@ -171,7 +195,7 @@
                 android:backgroundTint="@color/color_primary"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ed_add_description" />
+                app:layout_constraintTop_toBottomOf="@+id/ed_add_price" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>

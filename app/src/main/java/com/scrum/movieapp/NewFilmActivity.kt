@@ -71,8 +71,9 @@ class NewFilmActivity : AppCompatActivity() {
                     val genre = binding.edAddGenre.selectedItem.toString()
                     val actors = binding.edAddActors.text.toString()
                     val description = binding.edAddDescription.text.toString()
+                    val price = binding.edAddPrice.text.toString()
 
-                    val film = Film(description, imageUrl, title, genre, actors)
+                    val film = Film(description, imageUrl, title, genre, actors, price)
 
                     val database: FirebaseDatabase = FirebaseDatabase.getInstance("https://film-370da-default-rtdb.asia-southeast1.firebasedatabase.app/")
                     dbRef = database.reference.child("Film").push()
